@@ -1,0 +1,28 @@
+.search {
+  width: 400px;
+  height: 18px;
+  padding: 9px;
+  transition: 0.2s linear;
+  border: 2.5px solid black;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 4px;
+}
+.search:focus {
+  outline: none;
+  border: 0.5px solid black;
+  box-shadow: -5px -5px 0px black;
+}
+@media (max-width: 600px) {
+  .search{
+    width: 200px;
+    height: 18px;
+  }
+  @media (max-width: 390px) {
+    .search{
+    width: 100px;
+    height: 3px;
+  }
+  }
+}

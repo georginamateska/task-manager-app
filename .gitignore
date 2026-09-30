@@ -1,0 +1,18 @@
+# React dependencies
+frontend/node_modules/
+
+# React production build
+frontend/dist/
+
+# Laravel dependencies
+backend/vendor/
+
+# Laravel environment / secrets
+backend/.env
+
+# Laravel generated files
+backend/storage/*.key
+
+# Operating system files
+.DS_Store
+Thumbs.db

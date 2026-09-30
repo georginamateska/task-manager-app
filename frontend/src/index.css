@@ -1,0 +1,14 @@
+body{
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 600;
+    background-color: rgb(225, 230, 235);
+    padding: 3px;
+}
+.intro{
+    color: rgb(12, 14, 15);
+}
+body.dark {
+  background-color: #33474e;
+  color: rgb(206, 210, 227);
+
+}

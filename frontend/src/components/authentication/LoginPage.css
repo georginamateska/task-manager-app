@@ -1,0 +1,153 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 350px;
+  width: 100%;
+  padding: 24px;
+  border-radius: 16px;
+  position: relative;
+  background: linear-gradient(to bottom, #333c69, #3f4b82);
+  color: #fff;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  color: #60a8de;
+  margin: 0;
+}
+
+.login-title::before,
+.login-title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0;
+  background-color: #60a8de;
+}
+
+.login-title::after {
+  animation: login-pulse 1s linear infinite;
+}
+
+.login-message {
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+.login-form label {
+  position: relative;
+}
+
+.login-input {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  width: 100%;
+  padding: 20px 10px 5px 10px;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-size: medium;
+  box-sizing: border-box;
+}
+
+.login-input + span {
+  color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  left: 10px;
+  top: 12.5px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.login-input:focus + span,
+.login-input:not(:placeholder-shown) + span {
+  color: #fff;
+  top: 4px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.login-submit {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(90deg, #60a8de, #6ca3e6);
+}
+
+.login-submit:hover {
+  background: linear-gradient(90deg, #4f91c9, #5b8fd1);
+  transform: scale(1.02);
+}
+
+.login-error {
+  color: #ffb4b4;
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+
+.login-register {
+  text-align: center;
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.login-register p {
+  margin: 0 0 5px 0;
+}
+
+.login-register a,
+.login-register a:visited {
+  color: #60a8de;
+  text-decoration: none;
+}
+
+.login-register a:hover {
+  color: #60a8de;
+  text-decoration: underline;
+}
+
+@keyframes login-pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+.login-register a,
+.login-register a:visited {
+  color: #60a8de;
+}

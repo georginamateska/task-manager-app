@@ -1,0 +1,116 @@
+.add-task {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #60a8de, #6ca3e6);
+  border-radius: 10px;
+  overflow: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  animation: form-animation 0.5s ease-in-out;
+}
+
+@keyframes form-animation {
+  from {
+    transform: rotateX(-30deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.add-task input,
+.add-task select {
+  margin: 6px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition:
+    border-color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  color: rgb(255, 255, 255);
+  border: 2px solid #333c69;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.add-task textarea {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border: 2px solid #333c69;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  resize: vertical;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.add-task input::placeholder,
+.add-task textarea::placeholder {
+  color: #fff;
+}
+
+.add-task input:hover,
+.add-task input:focus,
+.add-task select:hover,
+.add-task select:focus {
+  border-color: #3b8df2;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05) rotateY(20deg);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.add-task button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333c69;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.add-task button:hover {
+  background-color: #0077be;
+  font-size: 17px;
+  transform: scale(1.05) rotateY(20deg) rotateX(10deg);
+}
+.app.dark .add-task{
+  background: rgb(79, 79, 115);
+
+}
+.submit-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
