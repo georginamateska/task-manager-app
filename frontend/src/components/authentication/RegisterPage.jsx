@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./RegisterPage.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function RegisterPage() {
   const navigate = useNavigate();
 
@@ -15,17 +17,18 @@ function RegisterPage() {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      setError("Passwords son't match!");
+      setError("Passwords don't match!");
       return;
     }
 
     try {
       setError("");
 
-      const response = await fetch("http://127.0.0.1:8000/api/register", {
+      const response = await fetch(`${API_URL}/api/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json"
         },
         body: JSON.stringify({
           name: name,
