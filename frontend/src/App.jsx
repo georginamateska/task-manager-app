@@ -1,12 +1,12 @@
 import { useState, useEffect, useContext } from "react";
-import { mockData } from "./data/mockData";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import TaskDetail from "./components/TaskDetail";
 import { TaskContext } from "./context/TaskContext";
 import LoginPage from "./components/authentication/LoginPage";
 import RegisterPage from "./components/authentication/RegisterPage";
+import { AuthContext } from "./context/AuthContext";
 
 function App() {
   const [searchItem, setSearchItem] = useState("");
@@ -14,6 +14,7 @@ function App() {
   const [sortOrder, setSortOrder] = useState("added");
   const [darkMode, setDarkMode] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const { user, isLoading } = useContext(AuthContext);
   const tasksPerPage = 10;
   const{
     tasks
@@ -86,6 +87,9 @@ function App() {
           <Route
             path="/"
             element={
+              isLoading ? (
+                <p>Loading...</p>
+              ) : user ? (
               <Dashboard
                 sortedTasks={sortedTasks}
                 paginatedTasks={paginatedTasks}
@@ -105,6 +109,9 @@ function App() {
                 setCurrentPage={setCurrentPage}
                 searchItem={searchItem}
               />
+              ) : (
+                <Navigate to="/login" replace />
+              )
             }
           />
           <Route
