@@ -79,7 +79,7 @@ function handleUpdateTask(updatedTask) {
   const payload = { ...updatedTask, due_date: updatedTask.dueDate };
   delete payload.dueDate;
 
-  fetch(`${API_URL}/api/tasks/}${updatedTask.id}`, {
+  fetch(`${API_URL}/api/tasks/${updatedTask.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

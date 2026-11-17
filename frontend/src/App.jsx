@@ -117,6 +117,9 @@ function App() {
           <Route
             path="/tasks/:id"
             element={
+              isLoading ? (
+                <p>Loading...</p>
+              ) : user ? (
               <TaskDetail
                 darkMode={darkMode}
                 onDarkMode={() => setDarkMode(!darkMode)}
@@ -129,6 +132,9 @@ function App() {
                 completedTasks={completedTasks}
                 remainingTasks={remainingTasks}
               />
+              ) : (
+                <Navigate to="/login" replace />
+              )
             }
           />
         </Routes>
