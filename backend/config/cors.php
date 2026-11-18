@@ -3,7 +3,7 @@
 return [
     'paths' => ['api/*'],
     'allowed_methods' => ['*'],
-    'allowed_origins' => ['https://your-app.vercel.app'],
+    'allowed_origins' => ['https://task-manager-app-bay-five.vercel.app'],
     'allowed_origins_patterns' => [],
     'allowed_headers' => ['*'],
     'exposed_headers' => [],
